@@ -49,26 +49,11 @@ public class Semester {
     }
 
     /**
-     * Вывод оценок за семестр
-     */
-    public void printMarks() {
-        System.out.print("Семестр - " + semester + ":\nОценки: ");
-        for (int i = 0; i < count; i++) {
-            System.out.print(mark[i]);
-            if (i != count - 1) {
-                System.out.print(", ");
-            } else {
-                System.out.print(".\n");
-            }
-        }
-    }
-
-    /**
      * Добавить оуенки в массив mark
      */
     public void addMarks(int[] marks) throws Exception {
         if (marks.length == 0) {
-            throw new Exception("Вы не ввели оценки");
+            return;
         } else {
             if (count >= mark.length || mark.length <= count + marks.length) {
                 mark = Arrays.copyOf(mark, count * 2 + marks.length);
@@ -101,7 +86,7 @@ public class Semester {
     public int getSemester() {
         return semester;
     }
-    public void setSemester(String subject) {
+    public void setSemester(int semester) {
         this.semester = semester;
     }
 

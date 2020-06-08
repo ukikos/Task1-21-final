@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public class Student {
 
-    public static final int SEM_SIZE = 14;
     public static final int DEFAULT_MARK_SIZE = 30;
 
     private String studentName; // имя студента
@@ -35,25 +34,6 @@ public class Student {
     }
 
     /**
-     *  Вывод всех оценок студента
-     */
-    public void printStudentMarks() {
-        for (int i = 0; i < currSem; i++) {
-            System.out.print((i+1) + " семестр: ");
-            for (int j = 0; j < allMarks[i].length; j++) {
-                if (allMarks[i][j] != 0 && j == 0) {
-                    System.out.print(allMarks[i][j]);
-                }
-                if (j != allMarks[i].length && allMarks[i][j] != 0 && j != 0) {
-                    System.out.print(", ");
-                    System.out.print(allMarks[i][j]);
-                }
-            }
-            System.out.print(".\n");
-        }
-    }
-
-    /**
      * Вычисление средней оценки за семестр
      */
     public double getAverageMarkForSemester(int sem) {
@@ -77,26 +57,6 @@ public class Student {
             sum += getAverageMarkForSemester(i);
         }
         return sum/currSem;
-    }
-
-    /**
-     * Вывод всей инфы о студенте (имя, семестр, оценки)
-     */
-    public void printStudentInfo() {
-        System.out.println("Студент: " + studentName + ", текущий семестр: " + currSem);
-        for (int i = 0; i < currSem; i++) {
-            System.out.print((i+1) + " семестр: ");
-            for (int j = 0; j < allMarks[i].length; j++) {
-                if (allMarks[i][j] != 0 && j == 0) {
-                    System.out.print(allMarks[i][j]);
-                }
-                if (j != allMarks[i].length && allMarks[i][j] != 0 && j != 0) {
-                    System.out.print(", ");
-                    System.out.print(allMarks[i][j]);
-                }
-            }
-            System.out.print(".\n");
-        }
     }
 
     public void setStudentName(String studentName) {

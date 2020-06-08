@@ -5,12 +5,8 @@ public class Main {
     public static void main(String[] args) throws Exception {
 
         Semester first = new Semester(1, new int[]{1, 5}); //создаем экземпляр класса Semester (1 семестр)
-        first.printMarks();                                        //вывод оценок
-
-        System.out.println("---------------------------------------------------------");
 
         first.addMarks(new int[]{4, 3, 4, 4, 5, 5});               //добавили оценки к существующим
-        first.printMarks();                                        //вывод оценок
         System.out.println(first.getCount());                      //кол-во оценок
 
         System.out.println("---------------------------------------------------------");
@@ -25,9 +21,6 @@ public class Main {
 
         student.setMarksForSemesterToStudent(first);                                              //передаем оценки за 1 сем. в объект student
         student.setMarksForSemesterToStudent(third);                                              //передаем оценки за 3 сем. в объект student
-        student.printStudentMarks();                                                              //выводим оценки нашего студента
-
-        System.out.println("---------------------------------------------------------");
 
         System.out.println(student.getAverageMarkForSemester(1));                                 //вычисляем средний балл за 1 семестр отдельно
         System.out.println(student.getAverageMarkForSemester(2));                                 //вычисляем средний балл за 2 семестр отдельно
@@ -38,8 +31,6 @@ public class Main {
         System.out.println(student.getAverageMarkForAllSemesters());                              //выводим средний балл за все время обучения (т.е до текущего семестра currSem)
 
         System.out.println("---------------------------------------------------------");
-
-        student.printStudentInfo();                                                               //информация о студенте
 
     }
 }
